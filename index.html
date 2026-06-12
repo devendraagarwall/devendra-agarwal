@@ -92,12 +92,14 @@ nav { position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-fil
 
 /* Certifications */
 .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-.cert-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: white; transition: all 0.3s; }
-.cert-card:hover { border-color: var(--accent); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+.cert-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: white; transition: all 0.3s; cursor: pointer; }
+.cert-card:hover { border-color: var(--accent); box-shadow: 0 8px 20px rgba(0,0,0,0.1); transform: translateY(-2px); }
 .cert-card.featured { border: 2px solid var(--accent); background: linear-gradient(135deg, rgba(230, 61, 0, 0.05) 0%, rgba(230, 61, 0, 0.02) 100%); }
 .cert-card.featured:hover { box-shadow: 0 12px 32px rgba(230, 61, 0, 0.2); }
-.cert-image { width: 100%; aspect-ratio: 4/3; background: #F5F5F5; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.cert-image { width: 100%; aspect-ratio: 4/3; background: #F5F5F5; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
 .cert-image img { width: 100%; height: 100%; object-fit: cover; }
+.cert-image::after { content: '🔗'; position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.6); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; opacity: 0; transition: opacity 0.3s; }
+.cert-card:hover .cert-image::after { opacity: 1; }
 .cert-details { padding: 16px; }
 .cert-badge { display: inline-block; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; font-weight: 700; margin-bottom: 8px; background: var(--accent); color: white; }
 .cert-name { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
@@ -438,56 +440,56 @@ footer { text-align: center; padding: 32px 60px; font-size: 12px; color: var(--m
 
   <div class="cert-grid">
     <!-- IIM Bangalore LOR - Featured -->
-    <div class="cert-card featured">
+    <a href="https://raw.githubusercontent.com/devendraagarwall/devendra-agarwal/main/bchs.png" target="_blank" class="cert-card featured">
       <div class="cert-image">
-        <img src="bchs.png" alt="IIM Bangalore Letter of Recommendation">
+        <img src="bchs.png" alt="Letter of Recommendation - IIM Bangalore">
       </div>
       <div class="cert-details">
         <span class="cert-badge">⭐ Featured</span>
         <div class="cert-name">Letter of Recommendation</div>
         <div class="cert-issuer">IIM Bangalore</div>
       </div>
-    </div>
+    </a>
 
-    <div class="cert-card">
+    <a href="https://raw.githubusercontent.com/devendraagarwall/devendra-agarwal/main/IIML.jpeg" target="_blank" class="cert-card">
       <div class="cert-image">
-        <img src="IIML.jpeg" alt="IIML Certification">
+        <img src="IIML.jpeg" alt="Digital Marketing Mastery - IIML India">
       </div>
       <div class="cert-details">
         <div class="cert-name">Digital Marketing Mastery</div>
         <div class="cert-issuer">IIML India</div>
       </div>
-    </div>
+    </a>
 
-    <div class="cert-card">
+    <a href="https://raw.githubusercontent.com/devendraagarwall/devendra-agarwal/main/IIT.jpeg" target="_blank" class="cert-card">
       <div class="cert-image">
-        <img src="IIT.jpeg" alt="IIT Certification">
+        <img src="IIT.jpeg" alt="Advanced Marketing Strategies - IIT Delhi">
       </div>
       <div class="cert-details">
         <div class="cert-name">Advanced Marketing Strategies</div>
         <div class="cert-issuer">IIT Delhi</div>
       </div>
-    </div>
+    </a>
 
-    <div class="cert-card">
+    <a href="https://raw.githubusercontent.com/devendraagarwall/devendra-agarwal/main/QCI.jpeg" target="_blank" class="cert-card">
       <div class="cert-image">
-        <img src="QCI.jpeg" alt="QCI Certification">
+        <img src="QCI.jpeg" alt="Quality & Excellence Certification - QCI India">
       </div>
       <div class="cert-details">
         <div class="cert-name">Quality & Excellence Certification</div>
         <div class="cert-issuer">QCI India</div>
       </div>
-    </div>
+    </a>
 
-    <div class="cert-card">
+    <a href="https://raw.githubusercontent.com/devendraagarwall/devendra-agarwal/main/ASLI%20SACHH.png" target="_blank" class="cert-card">
       <div class="cert-image">
-        <img src="ASLI SACHH.png" alt="Achievement Badge">
+        <img src="ASLI SACHH.png" alt="Excellence in Content - Industry Recognition">
       </div>
       <div class="cert-details">
         <div class="cert-name">Excellence in Content</div>
         <div class="cert-issuer">Industry Recognition</div>
       </div>
-    </div>
+    </a>
   </div>
 
   <div style="margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--border);">
