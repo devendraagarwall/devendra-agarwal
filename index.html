@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devendra Agarwal — Copywriter</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --accent: #E63D00;
+  --dark:   #0A0A0A;
+  --mid:    #444444;
+  --muted:  #888888;
+  --border: #E5E5E5;
+  --bg:     #FFFFFF;
+}
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--dark); line-height: 1.6; font-size: 16px; }
+nav { position: sticky; top: 0; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 16px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+.nav-name { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: -0.3px; color: var(--dark); text-decoration: none; }
+.nav-email { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-email:hover { color: var(--accent); }
+.hero { padding: 100px 60px 80px; max-width: 1000px; margin: 0 auto; }
+.hero-tag { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 24px; }
+.hero-name { font-family: 'Space Grotesk', sans-serif; font-size: clamp(56px, 9vw, 104px); font-weight: 700; letter-spacing: -4px; line-height: 0.88; color: var(--dark); margin-bottom: 36px; }
+.hero-line { font-size: clamp(17px, 2.2vw, 22px); color: var(--mid); font-weight: 300; max-width: 560px; line-height: 1.6; margin-bottom: 48px; }
+.hero-line strong { color: var(--dark); font-weight: 500; }
+.cta-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--dark); text-decoration: none; border-bottom: 1.5px solid var(--dark); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
+.cta-link:hover { color: var(--accent); border-color: var(--accent); }
+.stats { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 36px 60px; display: grid; grid-template-columns: repeat(3, 1fr); max-width: 1000px; margin: 0 auto; }
+.stat { text-align: center; padding: 0 20px; }
+.stat:not(:last-child) { border-right: 1px solid var(--border); }
+.stat-number { font-family: 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 700; color: var(--dark); letter-spacing: -1.5px; line-height: 1; margin-bottom: 8px; }
+.stat-number span { color: var(--accent); }
+.stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; }
+.section { max-width: 1000px; margin: 0 auto; padding: 80px 60px; }
+.section-divider { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 56px; display: flex; align-items: center; gap: 16px; }
+.section-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.work-item { margin-bottom: 88px; }
+.work-meta { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.badge { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; font-weight: 600; }
+.badge-real { background: #E8F4F0; color: #1B6B52; }
+.work-duration { font-size: 12px; color: var(--muted); letter-spacing: 0.5px; }
+.work-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 4vw, 40px); font-weight: 700; letter-spacing: -1.2px; color: var(--dark); margin-bottom: 14px; }
+.work-desc { font-size: 16px; color: var(--mid); max-width: 580px; line-height: 1.75; margin-bottom: 28px; }
+.work-metrics { display: flex; gap: 36px; flex-wrap: wrap; margin-bottom: 32px; }
+.metric { font-size: 12px; color: var(--muted); }
+.metric strong { color: var(--dark); font-size: 22px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; display: block; letter-spacing: -0.5px; line-height: 1.1; margin-bottom: 2px; }
+.screenshot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
+.screenshot-slot { aspect-ratio: 1; background: #F7F7F7; border: 1.5px dashed #D8D8D8; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #BBBBBB; font-size: 12px; text-align: center; padding: 16px; line-height: 1.5; }
+.screenshot-slot .slot-num { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #E0E0E0; margin-bottom: 6px; }
+.screenshot-slot .slot-hint { font-size: 11px; color: #C8C8C8; }
+.screenshot-slot img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
+.add-work-slot { border: 2px dashed #DEDEDE; border-radius: 12px; padding: 64px 40px; text-align: center; margin-bottom: 0; background: #FAFAFA; }
+.add-title { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600; color: #CCCCCC; margin-bottom: 10px; }
+.add-note { font-size: 14px; color: #CCCCCC; max-width: 400px; margin: 0 auto; }
+.about-text { font-size: clamp(18px, 2.2vw, 22px); color: var(--mid); max-width: 680px; line-height: 1.75; font-weight: 300; }
+.about-text strong { color: var(--dark); font-weight: 500; }
+.contact-section { border-top: 1px solid var(--border); padding: 80px 60px; max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 48px; }
+.contact-heading { font-family: 'Space Grotesk', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 700; letter-spacing: -2px; line-height: 1.05; color: var(--dark); }
+.contact-heading span { color: var(--accent); }
+.contact-links { display: flex; flex-direction: column; gap: 14px; padding-top: 6px; }
+.contact-link { font-size: 14px; color: var(--mid); text-decoration: none; display: flex; align-items: center; gap: 10px; transition: color 0.2s; }
+.contact-link:hover { color: var(--accent); }
+footer { text-align: center; padding: 28px 60px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); }
+@media (max-width: 768px) {
+  nav, .hero, .section, .contact-section { padding-left: 24px; padding-right: 24px; }
+  .stats { grid-template-columns: 1fr; padding: 20px 24px; }
+  .stat:not(:last-child) { border-right: none; border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .screenshot-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-name { letter-spacing: -2px; }
+  .contact-section { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-name">Devendra Agarwal</a>
+  <a href="mailto:devendra.agarwal2002@gmail.com" class="nav-email">devendra.agarwal2002@gmail.com</a>
+</nav>
+
+<section class="hero">
+  <p class="hero-tag">Jr. Copywriter</p>
+  <h1 class="hero-name">DEVENDRA<br>AGARWAL</h1>
+  <p class="hero-line">
+    I write copy that holds attention.<br>
+    <strong>500+ pieces. 200% growth. Real audiences.</strong><br>
+    No fluff, no filler — just words that do the job.
+  </p>
+  <a href="mailto:devendra.agarwal2002@gmail.com" class="cta-link">Get in touch &rarr;</a>
+</section>
+
+<div class="stats">
+  <div class="stat">
+    <div class="stat-number">500<span>+</span></div>
+    <div class="stat-label">Pieces Written</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">200<span>%</span></div>
+    <div class="stat-label">Engagement Growth</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">5.5<span>L+</span></div>
+    <div class="stat-label">Content Views</div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-divider">Selected Work</div>
+
+  <div class="work-item">
+    <div class="work-meta">
+      <span class="badge badge-real">Real Work</span>
+      <span class="work-duration">Mar 2024 – Apr 2025 &nbsp;·&nbsp; 13 months</span>
+    </div>
+    <h2 class="work-title">Desi Kaanoon</h2>
+    <p class="work-desc">
+      Content manager for India's emerging legal media platform. Wrote articles,
+      social captions, and video scripts alongside Supreme Court lawyers —
+      turning dense legal language into copy people actually read and shared.
+    </p>
+    <div class="work-metrics">
+      <div class="metric"><strong>200%</strong>Engagement growth</div>
+      <div class="metric"><strong>3&times;</strong>Organic reach</div>
+      <div class="metric"><strong>10K+</strong>Monthly readers</div>
+      <div class="metric"><strong>500+</strong>Pieces produced</div>
+    </div>
+    <a href="https://www.instagram.com/desikaanoon/" target="_blank" class="cta-link" style="margin-bottom: 0;">View on Instagram &rarr;</a>
+
+    <div class="screenshot-grid">
+      <div class="screenshot-slot">
+        <div class="slot-num">01</div>
+        Add your best post screenshot here
+        <div class="slot-hint">Upload to imgbb.com and replace this block</div>
+      </div>
+      <div class="screenshot-slot">
+        <div class="slot-num">02</div>
+        Add your favourite caption here
+        <div class="slot-hint">Upload to imgbb.com and replace this block</div>
+      </div>
+      <div class="screenshot-slot">
+        <div class="slot-num">03</div>
+        Add most creative piece here
+        <div class="slot-hint">Upload to imgbb.com and replace this block</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="add-work-slot">
+    <div class="add-title">+ Add your next piece here</div>
+    <p class="add-note">
+      IIT Delhi campaign screenshots, another spec concept,
+      or any copy you're proud of.
+    </p>
+  </div>
+
+</section>
+
+<section class="section" style="border-top: 1px solid #E5E5E5; padding-top: 72px;">
+  <div class="section-divider">About</div>
+  <p class="about-text">
+    MBA candidate at <strong>IIIT Lucknow</strong> (Marketing &amp; Analytics).
+    Writing since 2021 — legal content, social campaigns, scripts, and brand copy
+    across platforms and audiences. I think in <strong>audience-first</strong>
+    language, not brand-first. I understand voice, I work under deadlines,
+    and I'm ready to grow inside the right agency.
+  </p>
+</section>
+
+<div class="contact-section">
+  <div>
+    <h2 class="contact-heading">
+      Let's make<br>something<span>.</span>
+    </h2>
+  </div>
+  <div class="contact-links">
+    <a href="mailto:devendra.agarwal2002@gmail.com" class="contact-link">
+      &#9993; &nbsp;devendra.agarwal2002@gmail.com
+    </a>
+    <a href="tel:+919473738606" class="contact-link">
+      &#9990; &nbsp;+91-9473738606
+    </a>
+    <a href="https://www.linkedin.com/in/devendra-agarwal" target="_blank" class="contact-link">
+      &#8599; &nbsp;linkedin.com/in/devendra-agarwal
+    </a>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Devendra Agarwal &nbsp;&middot;&nbsp;
+  All real work is live at the links above.
+</footer>
+
+</body>
+</html>
