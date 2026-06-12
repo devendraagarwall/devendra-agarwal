@@ -83,6 +83,7 @@ nav { position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-fil
 .work-image img { width: 100%; height: 100%; object-fit: cover; }
 .work-content { padding: 28px; }
 .work-badge { display: inline-block; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 12px; border-radius: 3px; font-weight: 600; margin-bottom: 12px; background: #E8F4F8; color: var(--info); }
+.work-badge.current { background: #FFF4E6; color: var(--accent); }
 .work-title { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 12px; letter-spacing: -0.5px; }
 .work-desc { font-size: 14px; color: var(--mid); line-height: 1.6; margin-bottom: 16px; }
 .work-metrics { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 16px; font-size: 12px; color: var(--muted); }
@@ -292,44 +293,72 @@ footer { text-align: center; padding: 32px 60px; font-size: 12px; color: var(--m
     <h2 class="section-title">Live Projects & Campaigns</h2>
   </div>
 
-  <div class="work-grid">
-    <!-- Desi Kaanoon -->
-    <div class="work-card">
-      <div class="work-image">
-        <img src="dkk.webp" alt="Desi Kaanoon - Legal Content Platform">
-      </div>
-      <div class="work-content">
-        <span class="work-badge">Real Work</span>
-        <h3 class="work-title">Desi Kaanoon</h3>
-        <p class="work-desc">Content Manager for India's emerging legal media platform. Wrote 500+ articles, social captions, and video scripts with Supreme Court lawyers.</p>
-        <div class="work-metrics">
-          <span>📈 200% engagement growth</span>
-          <span>👥 3× organic reach</span>
-          <span>📄 500+ pieces</span>
+  <!-- Desi Kaanoon Section -->
+  <div style="margin-bottom: 64px;">
+    <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: var(--dark); margin-bottom: 32px; letter-spacing: -0.5px;">Legal Content at Scale</h3>
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="work-image">
+          <img src="dkk.webp" alt="Desi Kaanoon - Legal Content Platform">
         </div>
-        <a href="https://www.instagram.com/desikaanoon/" target="_blank" class="work-link">
-          View on Instagram →
-        </a>
+        <div class="work-content">
+          <span class="work-badge">Featured Project</span>
+          <h3 class="work-title">Desi Kaanoon</h3>
+          <p class="work-desc">Content Manager for India's emerging legal media platform. Wrote 500+ articles, social captions, and video scripts with Supreme Court lawyers. Built editorial calendars, created SEO strategies, and drove measurable audience growth.</p>
+          <div class="work-metrics">
+            <span>📈 200% engagement growth</span>
+            <span>👥 3× organic reach</span>
+            <span>📄 500+ pieces</span>
+          </div>
+          <a href="https://www.instagram.com/desikaanoon/" target="_blank" class="work-link">
+            View on Instagram →
+          </a>
+        </div>
       </div>
     </div>
+  </div>
 
-    <!-- Additional Work Slot 1 -->
-    <div class="work-card">
-      <div class="work-image">
-        <img src="bh.jpg" alt="Campaign Work - Coming Soon">
-      </div>
-      <div class="work-content">
-        <span class="work-badge">Campaign</span>
-        <h3 class="work-title">Upcoming Project</h3>
-        <p class="work-desc">Additional campaign screenshots, portfolio pieces, and case studies. Showcasing brand strategy and content performance.</p>
-        <div class="work-metrics">
-          <span>💡 Strategic thinking</span>
-          <span>📊 Data-driven</span>
-          <span>🎯 Results-focused</span>
+  <!-- YouTube Channel Section -->
+  <div>
+    <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: var(--dark); margin-bottom: 32px; letter-spacing: -0.5px;">YouTube: Current Growth Strategy</h3>
+    <p style="font-size: 16px; color: var(--mid); margin-bottom: 32px; line-height: 1.6;">Building a YouTube channel with audience-first content strategy. Thumbnails showcase previous work and creative direction for full-scale launch.</p>
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="work-image">
+          <img src="yt-thumb-1.jpg" alt="YouTube Thumbnail - Previous Work">
         </div>
-        <a href="mailto:devendra.agarwal2002@gmail.com" class="work-link">
-          Tell me your challenges →
-        </a>
+        <div class="work-content">
+          <span class="work-badge current">In Progress</span>
+          <h3 class="work-title">YouTube Channel</h3>
+          <p class="work-desc">Launching YouTube with strategic content planning. Thumbnails represent creative direction from previous portfolio. Building audience through storytelling, education, and engagement-driven content.</p>
+          <div class="work-metrics">
+            <span>🎬 Video production & strategy</span>
+            <span>🎨 Thumbnail design & optimization</span>
+            <span>📊 Growth-focused content plan</span>
+          </div>
+          <a href="mailto:devendra.agarwal2002@gmail.com" class="work-link">
+            Let's collaborate →
+          </a>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-image">
+          <img src="yt-thumb-2.jpg" alt="YouTube Thumbnail - Creative Direction">
+        </div>
+        <div class="work-content">
+          <span class="work-badge current">Portfolio Reference</span>
+          <h3 class="work-title">Creative Direction</h3>
+          <p class="work-desc">Showcasing creative thumbnails and visual strategy from previous work. These thumbnails inform the visual brand and content positioning for the YouTube channel launch.</p>
+          <div class="work-metrics">
+            <span>💡 Visual brand consistency</span>
+            <span>🎯 CTR optimization</span>
+            <span>📈 Audience research-backed</span>
+          </div>
+          <a href="mailto:devendra.agarwal2002@gmail.com" class="work-link">
+            Discuss YouTube strategy →
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -358,12 +387,12 @@ footer { text-align: center; padding: 32px 60px; font-size: 12px; color: var(--m
     <div class="skill-group">
       <div class="skill-group-title">Platforms & Tools</div>
       <div class="skill-tags">
+        <span class="skill-tag">YouTube</span>
         <span class="skill-tag">Instagram</span>
         <span class="skill-tag">LinkedIn</span>
         <span class="skill-tag">WordPress</span>
         <span class="skill-tag">Google Analytics</span>
         <span class="skill-tag">Canva</span>
-        <span class="skill-tag">MS Office</span>
       </div>
     </div>
 
@@ -470,7 +499,7 @@ footer { text-align: center; padding: 32px 60px; font-size: 12px; color: var(--m
         Since 2021, I've written <strong>500+ pieces of content</strong> — from legal articles to social captions, video scripts, and brand messaging. I work with the understanding that <strong>audience first, narrative second</strong> drives engagement and measurable impact.
       </p>
       <p class="about-text">
-        As a content manager at <strong>Desi Kaanoon</strong>, I drove <strong>200% engagement growth</strong> and 3× organic reach while making Supreme Court rulings accessible to everyday people. I've worked with lawyers, designers, and strategy teams to deliver consistently.
+        As a content manager at <strong>Desi Kaanoon</strong>, I drove <strong>200% engagement growth</strong> and 3× organic reach while making Supreme Court rulings accessible to everyday people. Now I'm expanding into YouTube with strategic content and growth-focused initiatives.
       </p>
     </div>
 
@@ -530,7 +559,7 @@ footer { text-align: center; padding: 32px 60px; font-size: 12px; color: var(--m
       </a>
       <a href="https://www.instagram.com/desikaanoon/" target="_blank" class="contact-link">
         <span class="contact-icon">📸</span>
-        @desikaanoon (Featured Work)
+        @desikaanoon (Desi Kaanoon)
       </a>
     </div>
   </div>
