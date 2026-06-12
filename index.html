@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Devendra Agarwal — Copywriter</title>
+<title>Devendra Agarwal — Content Strategist & Copywriter</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -14,183 +14,552 @@
   --muted:  #888888;
   --border: #E5E5E5;
   --bg:     #FFFFFF;
+  --success: #1B6B52;
+  --info:   #0A5A8A;
 }
+
 body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--dark); line-height: 1.6; font-size: 16px; }
-nav { position: sticky; top: 0; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 16px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
-.nav-name { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: -0.3px; color: var(--dark); text-decoration: none; }
+
+/* Navigation */
+nav { position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 14px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+.nav-brand { display: flex; align-items: center; gap: 14px; }
+.nav-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: -0.4px; color: var(--dark); text-decoration: none; }
+.nav-role { font-size: 11px; color: var(--accent); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+.nav-menu { display: flex; gap: 32px; align-items: center; }
+.nav-link { font-size: 13px; color: var(--mid); text-decoration: none; transition: color 0.2s; font-weight: 500; }
+.nav-link:hover { color: var(--accent); }
+.nav-link.active { color: var(--accent); }
 .nav-email { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
 .nav-email:hover { color: var(--accent); }
-.hero { padding: 100px 60px 80px; max-width: 1000px; margin: 0 auto; }
-.hero-tag { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 24px; }
-.hero-name { font-family: 'Space Grotesk', sans-serif; font-size: clamp(56px, 9vw, 104px); font-weight: 700; letter-spacing: -4px; line-height: 0.88; color: var(--dark); margin-bottom: 36px; }
-.hero-line { font-size: clamp(17px, 2.2vw, 22px); color: var(--mid); font-weight: 300; max-width: 560px; line-height: 1.6; margin-bottom: 48px; }
-.hero-line strong { color: var(--dark); font-weight: 500; }
-.cta-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--dark); text-decoration: none; border-bottom: 1.5px solid var(--dark); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
-.cta-link:hover { color: var(--accent); border-color: var(--accent); }
-.stats { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 36px 60px; display: grid; grid-template-columns: repeat(3, 1fr); max-width: 1000px; margin: 0 auto; }
-.stat { text-align: center; padding: 0 20px; }
-.stat:not(:last-child) { border-right: 1px solid var(--border); }
-.stat-number { font-family: 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 700; color: var(--dark); letter-spacing: -1.5px; line-height: 1; margin-bottom: 8px; }
-.stat-number span { color: var(--accent); }
-.stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; }
-.section { max-width: 1000px; margin: 0 auto; padding: 80px 60px; }
-.section-divider { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 56px; display: flex; align-items: center; gap: 16px; }
-.section-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-.work-item { margin-bottom: 88px; }
-.work-meta { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
-.badge { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; font-weight: 600; }
-.badge-real { background: #E8F4F0; color: #1B6B52; }
-.work-duration { font-size: 12px; color: var(--muted); letter-spacing: 0.5px; }
-.work-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 4vw, 40px); font-weight: 700; letter-spacing: -1.2px; color: var(--dark); margin-bottom: 14px; }
-.work-desc { font-size: 16px; color: var(--mid); max-width: 580px; line-height: 1.75; margin-bottom: 28px; }
-.work-metrics { display: flex; gap: 36px; flex-wrap: wrap; margin-bottom: 32px; }
-.metric { font-size: 12px; color: var(--muted); }
-.metric strong { color: var(--dark); font-size: 22px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; display: block; letter-spacing: -0.5px; line-height: 1.1; margin-bottom: 2px; }
-.screenshot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
-.screenshot-slot { aspect-ratio: 1; background: #F7F7F7; border: 1.5px dashed #D8D8D8; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #BBBBBB; font-size: 12px; text-align: center; padding: 16px; line-height: 1.5; }
-.screenshot-slot .slot-num { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #E0E0E0; margin-bottom: 6px; }
-.screenshot-slot .slot-hint { font-size: 11px; color: #C8C8C8; }
-.screenshot-slot img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
-.add-work-slot { border: 2px dashed #DEDEDE; border-radius: 12px; padding: 64px 40px; text-align: center; margin-bottom: 0; background: #FAFAFA; }
-.add-title { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600; color: #CCCCCC; margin-bottom: 10px; }
-.add-note { font-size: 14px; color: #CCCCCC; max-width: 400px; margin: 0 auto; }
-.about-text { font-size: clamp(18px, 2.2vw, 22px); color: var(--mid); max-width: 680px; line-height: 1.75; font-weight: 300; }
-.about-text strong { color: var(--dark); font-weight: 500; }
-.contact-section { border-top: 1px solid var(--border); padding: 80px 60px; max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 48px; }
-.contact-heading { font-family: 'Space Grotesk', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 700; letter-spacing: -2px; line-height: 1.05; color: var(--dark); }
-.contact-heading span { color: var(--accent); }
-.contact-links { display: flex; flex-direction: column; gap: 14px; padding-top: 6px; }
-.contact-link { font-size: 14px; color: var(--mid); text-decoration: none; display: flex; align-items: center; gap: 10px; transition: color 0.2s; }
-.contact-link:hover { color: var(--accent); }
-footer { text-align: center; padding: 28px 60px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); }
+
+/* Hero Section */
+.hero { padding: 80px 60px 60px; max-width: 1200px; margin: 0 auto; }
+.hero-tag { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 20px; }
+.hero-main { display: flex; justify-content: space-between; align-items: flex-start; gap: 60px; margin-bottom: 48px; }
+.hero-content { flex: 1; }
+.hero-name { font-family: 'Space Grotesk', sans-serif; font-size: clamp(48px, 6vw, 72px); font-weight: 700; letter-spacing: -2px; line-height: 1.05; color: var(--dark); margin-bottom: 24px; }
+.hero-tagline { font-size: clamp(16px, 2vw, 20px); color: var(--mid); font-weight: 400; max-width: 520px; line-height: 1.65; margin-bottom: 32px; }
+.hero-tagline strong { color: var(--dark); font-weight: 600; }
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+.cta-button { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 6px; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; }
+.cta-primary { background: var(--accent); color: white; }
+.cta-primary:hover { background: #c82f00; transform: translateY(-2px); box-shadow: 0 8px 16px rgba(230, 61, 0, 0.2); }
+.cta-secondary { background: transparent; color: var(--dark); border: 1.5px solid var(--dark); }
+.cta-secondary:hover { color: var(--accent); border-color: var(--accent); }
+.hero-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.meta-item { padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+.meta-label { font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+.meta-value { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: var(--dark); letter-spacing: -0.5px; }
+.meta-value .highlight { color: var(--accent); }
+
+/* Stats Banner */
+.stats-banner { background: linear-gradient(135deg, rgba(230, 61, 0, 0.08) 0%, rgba(230, 61, 0, 0.04) 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 48px 60px; }
+.stats-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+.stat { }
+.stat-number { font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 700; color: var(--dark); letter-spacing: -1px; margin-bottom: 8px; }
+.stat-number .accent { color: var(--accent); }
+.stat-label { font-size: 12px; color: var(--muted); letter-spacing: 0.5px; font-weight: 500; }
+
+/* Section Styling */
+.section { max-width: 1200px; margin: 0 auto; padding: 72px 60px; }
+.section-header { margin-bottom: 56px; }
+.section-label { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+.section-label::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+.section-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(36px, 4vw, 48px); font-weight: 700; letter-spacing: -1.2px; color: var(--dark); }
+
+/* Expertise Grid */
+.expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 48px; }
+.expertise-card { background: #FAFAFA; border: 1px solid var(--border); border-radius: 8px; padding: 32px 28px; transition: all 0.3s; }
+.expertise-card:hover { border-color: var(--accent); box-shadow: 0 8px 24px rgba(230, 61, 0, 0.08); transform: translateY(-4px); }
+.expertise-icon { font-size: 28px; margin-bottom: 16px; }
+.expertise-title { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; color: var(--dark); margin-bottom: 12px; }
+.expertise-desc { font-size: 14px; color: var(--mid); line-height: 1.6; }
+
+/* Work Showcase */
+.work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
+.work-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: all 0.3s; }
+.work-card:hover { border-color: var(--accent); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+.work-image { width: 100%; aspect-ratio: 16/10; background: #F0F0F0; display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--muted); }
+.work-image img { width: 100%; height: 100%; object-fit: cover; }
+.work-content { padding: 28px; }
+.work-badge { display: inline-block; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 12px; border-radius: 3px; font-weight: 600; margin-bottom: 12px; background: #E8F4F0; color: var(--success); }
+.work-title { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 12px; letter-spacing: -0.5px; }
+.work-desc { font-size: 14px; color: var(--mid); line-height: 1.6; margin-bottom: 16px; }
+.work-metrics { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 16px; font-size: 12px; color: var(--muted); }
+.work-link { font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; transition: gap 0.2s; }
+.work-link:hover { gap: 10px; }
+
+/* Certifications */
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.cert-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: white; transition: all 0.3s; }
+.cert-card:hover { border-color: var(--accent); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+.cert-image { width: 100%; aspect-ratio: 4/3; background: #F5F5F5; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.cert-image img { width: 100%; height: 100%; object-fit: cover; }
+.cert-details { padding: 16px; }
+.cert-name { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
+.cert-issuer { font-size: 12px; color: var(--muted); }
+
+/* Skills & Tools */
+.skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
+.skill-group { }
+.skill-group-title { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; color: var(--dark); margin-bottom: 14px; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.skill-tag { display: inline-flex; align-items: center; gap: 6px; background: #F5F5F5; border: 1px solid var(--border); padding: 8px 14px; border-radius: 20px; font-size: 13px; color: var(--mid); font-weight: 500; }
+.skill-tag:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+/* About Section */
+.about-section { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.about-text { font-size: clamp(15px, 1.8vw, 18px); color: var(--mid); line-height: 1.8; font-weight: 400; }
+.about-text strong { color: var(--dark); font-weight: 600; }
+.about-text p { margin-bottom: 20px; }
+.about-highlights { display: flex; flex-direction: column; gap: 16px; }
+.highlight-item { display: flex; gap: 14px; align-items: flex-start; }
+.highlight-icon { font-size: 20px; flex-shrink: 0; }
+.highlight-text { font-size: 14px; color: var(--mid); line-height: 1.6; }
+.highlight-text strong { color: var(--dark); }
+
+/* Contact Section */
+.contact-section { border-top: 1px solid var(--border); padding: 64px 60px; max-width: 1200px; margin: 0 auto; }
+.contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.contact-heading { font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4vw, 48px); font-weight: 700; letter-spacing: -1px; line-height: 1.2; color: var(--dark); }
+.contact-heading .highlight { color: var(--accent); }
+.contact-links { display: flex; flex-direction: column; gap: 16px; }
+.contact-link { font-size: 15px; color: var(--mid); text-decoration: none; display: flex; align-items: center; gap: 12px; transition: all 0.2s; font-weight: 500; }
+.contact-link:hover { color: var(--accent); gap: 16px; }
+.contact-icon { font-size: 18px; }
+
+/* Footer */
+footer { text-align: center; padding: 32px 60px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); background: #FAFAFA; }
+
+/* Responsive */
 @media (max-width: 768px) {
-  nav, .hero, .section, .contact-section { padding-left: 24px; padding-right: 24px; }
-  .stats { grid-template-columns: 1fr; padding: 20px 24px; }
-  .stat:not(:last-child) { border-right: none; border-bottom: 1px solid var(--border); padding: 20px 0; }
-  .screenshot-grid { grid-template-columns: repeat(2, 1fr); }
-  .hero-name { letter-spacing: -2px; }
-  .contact-section { flex-direction: column; }
+  nav, .hero, .section, .contact-section { padding-left: 20px; padding-right: 20px; }
+  nav { padding: 12px 20px; flex-direction: column; gap: 14px; }
+  .nav-menu { flex-direction: column; gap: 14px; width: 100%; }
+  .nav-link { display: block; }
+  .hero-main { flex-direction: column; gap: 40px; }
+  .hero-meta { grid-template-columns: 1fr; }
+  .meta-item { padding-bottom: 14px; }
+  .stats-container { grid-template-columns: 1fr; }
+  .work-grid { grid-template-columns: 1fr; }
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
+  .skills-container { grid-template-columns: 1fr; }
+  .about-section { grid-template-columns: 1fr; }
+  .contact-content { grid-template-columns: 1fr; }
+  .expertise-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  nav, .hero, .section, .contact-section { padding-left: 16px; padding-right: 16px; }
+  .hero-name { font-size: 40px; }
+  .stats-container { gap: 24px; }
+  .cert-grid { grid-template-columns: 1fr; }
+  .skill-tags { gap: 8px; }
+  .skill-tag { font-size: 12px; padding: 6px 12px; }
 }
 </style>
 </head>
 <body>
 
+<!-- Navigation -->
 <nav>
-  <a href="#" class="nav-name">Devendra Agarwal</a>
-  <a href="mailto:devendra.agarwal2002@gmail.com" class="nav-email">devendra.agarwal2002@gmail.com</a>
+  <div class="nav-brand">
+    <div>
+      <div class="nav-name">Devendra Agarwal</div>
+      <div class="nav-role">Content Strategist & Copywriter</div>
+    </div>
+  </div>
+  <div class="nav-menu">
+    <a href="#work" class="nav-link">Work</a>
+    <a href="#expertise" class="nav-link">Expertise</a>
+    <a href="#credentials" class="nav-link">Credentials</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="mailto:devendra.agarwal2002@gmail.com" class="nav-email">📧 Email</a>
+  </div>
 </nav>
 
+<!-- Hero Section -->
 <section class="hero">
-  <p class="hero-tag">Jr. Copywriter</p>
-  <h1 class="hero-name">DEVENDRA<br>AGARWAL</h1>
-  <p class="hero-line">
-    I write copy that holds attention.<br>
-    <strong>500+ pieces. 200% growth. Real audiences.</strong><br>
-    No fluff, no filler — just words that do the job.
-  </p>
-  <a href="mailto:devendra.agarwal2002@gmail.com" class="cta-link">Get in touch &rarr;</a>
+  <div class="hero-tag">📝 Content • Marketing • Copywriting</div>
+  <div class="hero-main">
+    <div class="hero-content">
+      <h1 class="hero-name">Copywriter &<br>Content Strategist</h1>
+      <p class="hero-tagline">
+        I craft <strong>audience-first copy</strong> that drives engagement. Proven track record with <strong>500+ pieces</strong>, <strong>200% growth</strong>, and <strong>real measurable results</strong>.<br>Ready for roles in content strategy, copywriting, and digital marketing.
+      </p>
+      <div class="hero-cta">
+        <a href="mailto:devendra.agarwal2002@gmail.com" class="cta-button cta-primary">
+          💼 Get in Touch
+        </a>
+        <a href="#work" class="cta-button cta-secondary">
+          View Work
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="hero-meta">
+    <div class="meta-item">
+      <div class="meta-label">Pieces Created</div>
+      <div class="meta-value">500<span class="highlight">+</span></div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Engagement Growth</div>
+      <div class="meta-value">200<span class="highlight">%</span></div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Content Reach</div>
+      <div class="meta-value">5.5<span class="highlight">L+</span></div>
+    </div>
+  </div>
 </section>
 
-<div class="stats">
-  <div class="stat">
-    <div class="stat-number">500<span>+</span></div>
-    <div class="stat-label">Pieces Written</div>
-  </div>
-  <div class="stat">
-    <div class="stat-number">200<span>%</span></div>
-    <div class="stat-label">Engagement Growth</div>
-  </div>
-  <div class="stat">
-    <div class="stat-number">5.5<span>L+</span></div>
-    <div class="stat-label">Content Views</div>
+<!-- Stats Banner -->
+<div class="stats-banner">
+  <div class="stats-container">
+    <div class="stat">
+      <div class="stat-number">13<span class="accent">mo</span></div>
+      <div class="stat-label">Hands-on Experience</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">10<span class="accent">K+</span></div>
+      <div class="stat-label">Monthly Active Readers</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">3<span class="accent">×</span></div>
+      <div class="stat-label">Organic Reach Multiplier</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">MBA</div>
+      <div class="stat-label">Marketing & Analytics</div>
+    </div>
   </div>
 </div>
 
+<!-- Expertise Section -->
+<section class="section" id="expertise">
+  <div class="section-header">
+    <div class="section-label">Core Competencies</div>
+    <h2 class="section-title">What I Do</h2>
+  </div>
+  
+  <div class="expertise-grid">
+    <div class="expertise-card">
+      <div class="expertise-icon">📰</div>
+      <h3 class="expertise-title">Content Strategy</h3>
+      <p class="expertise-desc">Audience-first planning, editorial calendars, content frameworks, and multi-channel distribution strategies that drive sustainable growth.</p>
+    </div>
+    
+    <div class="expertise-card">
+      <div class="expertise-icon">✍️</div>
+      <h3 class="expertise-title">Copywriting</h3>
+      <p class="expertise-desc">Conversion-focused copy for social media, articles, email campaigns, and brand messaging. SEO-optimized and audience-driven.</p>
+    </div>
+    
+    <div class="expertise-card">
+      <div class="expertise-icon">📊</div>
+      <h3 class="expertise-title">Analytics & Growth</h3>
+      <p class="expertise-desc">Data-driven decision making, performance metrics, engagement optimization, and growth hacking through content.</p>
+    </div>
+    
+    <div class="expertise-card">
+      <div class="expertise-icon">🎯</div>
+      <h3 class="expertise-title">Brand Voice</h3>
+      <p class="expertise-desc">Building and maintaining consistent brand voice across platforms. Legal content simplified for general audiences.</p>
+    </div>
+    
+    <div class="expertise-card">
+      <div class="expertise-icon">🎬</div>
+      <h3 class="expertise-title">Multimedia Content</h3>
+      <p class="expertise-desc">Scripts, captions, video briefs, and multimedia storytelling. Content that performs on every platform.</p>
+    </div>
+    
+    <div class="expertise-card">
+      <div class="expertise-icon">🚀</div>
+      <h3 class="expertise-title">Campaign Execution</h3>
+      <p class="expertise-desc">End-to-end campaign management, deadline-driven delivery, and cross-functional collaboration with agencies and stakeholders.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Work Showcase -->
+<section class="section" id="work">
+  <div class="section-header">
+    <div class="section-label">Featured Work</div>
+    <h2 class="section-title">Live Projects & Campaigns</h2>
+  </div>
+
+  <div class="work-grid">
+    <!-- Desi Kaanoon -->
+    <div class="work-card">
+      <div class="work-image">
+        <img src="dkk.webp" alt="Desi Kaanoon - Legal Content Platform">
+      </div>
+      <div class="work-content">
+        <span class="work-badge">Real Work</span>
+        <h3 class="work-title">Desi Kaanoon</h3>
+        <p class="work-desc">Content Manager for India's emerging legal media platform. Wrote 500+ articles, social captions, and video scripts with Supreme Court lawyers.</p>
+        <div class="work-metrics">
+          <span>📈 200% engagement growth</span>
+          <span>👥 3× organic reach</span>
+          <span>📄 500+ pieces</span>
+        </div>
+        <a href="https://www.instagram.com/desikaanoon/" target="_blank" class="work-link">
+          View on Instagram →
+        </a>
+      </div>
+    </div>
+
+    <!-- Additional Work Slot 1 -->
+    <div class="work-card">
+      <div class="work-image">
+        <img src="bh.jpg" alt="Campaign Work - Coming Soon">
+      </div>
+      <div class="work-content">
+        <span class="work-badge">Campaign</span>
+        <h3 class="work-title">Upcoming Project</h3>
+        <p class="work-desc">Additional campaign screenshots, portfolio pieces, and case studies. Showcasing brand strategy and content performance.</p>
+        <div class="work-metrics">
+          <span>💡 Strategic thinking</span>
+          <span>📊 Data-driven</span>
+          <span>🎯 Results-focused</span>
+        </div>
+        <a href="mailto:devendra.agarwal2002@gmail.com" class="work-link">
+          Tell me your challenges →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills & Tools -->
 <section class="section">
-  <div class="section-divider">Selected Work</div>
+  <div class="section-header">
+    <div class="section-label">Toolkit & Skills</div>
+    <h2 class="section-title">Tools & Platforms</h2>
+  </div>
 
-  <div class="work-item">
-    <div class="work-meta">
-      <span class="badge badge-real">Real Work</span>
-      <span class="work-duration">Mar 2024 – Apr 2025 &nbsp;·&nbsp; 13 months</span>
+  <div class="skills-container">
+    <div class="skill-group">
+      <div class="skill-group-title">Content & Writing</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Copywriting</span>
+        <span class="skill-tag">Content Strategy</span>
+        <span class="skill-tag">SEO Content</span>
+        <span class="skill-tag">Social Media</span>
+        <span class="skill-tag">Email Campaigns</span>
+        <span class="skill-tag">Video Scripts</span>
+      </div>
     </div>
-    <h2 class="work-title">Desi Kaanoon</h2>
-    <p class="work-desc">
-      Content manager for India's emerging legal media platform. Wrote articles,
-      social captions, and video scripts alongside Supreme Court lawyers —
-      turning dense legal language into copy people actually read and shared.
-    </p>
-    <div class="work-metrics">
-      <div class="metric"><strong>200%</strong>Engagement growth</div>
-      <div class="metric"><strong>3&times;</strong>Organic reach</div>
-      <div class="metric"><strong>10K+</strong>Monthly readers</div>
-      <div class="metric"><strong>500+</strong>Pieces produced</div>
-    </div>
-    <a href="https://www.instagram.com/desikaanoon/" target="_blank" class="cta-link" style="margin-bottom: 0;">View on Instagram &rarr;</a>
 
-    <div class="screenshot-grid">
-      <div class="screenshot-slot">
-        <div class="slot-num">01</div>
-        Add your best post screenshot here
-        <div class="slot-hint">Upload to imgbb.com and replace this block</div>
+    <div class="skill-group">
+      <div class="skill-group-title">Platforms & Tools</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Instagram</span>
+        <span class="skill-tag">LinkedIn</span>
+        <span class="skill-tag">WordPress</span>
+        <span class="skill-tag">Google Analytics</span>
+        <span class="skill-tag">Canva</span>
+        <span class="skill-tag">MS Office</span>
       </div>
-      <div class="screenshot-slot">
-        <div class="slot-num">02</div>
-        Add your favourite caption here
-        <div class="slot-hint">Upload to imgbb.com and replace this block</div>
-      </div>
-      <div class="screenshot-slot">
-        <div class="slot-num">03</div>
-        Add most creative piece here
-        <div class="slot-hint">Upload to imgbb.com and replace this block</div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Marketing & Analytics</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Growth Hacking</span>
+        <span class="skill-tag">Performance Analytics</span>
+        <span class="skill-tag">A/B Testing</span>
+        <span class="skill-tag">Engagement Metrics</span>
+        <span class="skill-tag">Campaign Management</span>
+        <span class="skill-tag">Audience Research</span>
       </div>
     </div>
   </div>
-
-  <div class="add-work-slot">
-    <div class="add-title">+ Add your next piece here</div>
-    <p class="add-note">
-      IIT Delhi campaign screenshots, another spec concept,
-      or any copy you're proud of.
-    </p>
-  </div>
-
 </section>
 
-<section class="section" style="border-top: 1px solid #E5E5E5; padding-top: 72px;">
-  <div class="section-divider">About</div>
-  <p class="about-text">
-    MBA candidate at <strong>IIIT Lucknow</strong> (Marketing &amp; Analytics).
-    Writing since 2021 — legal content, social campaigns, scripts, and brand copy
-    across platforms and audiences. I think in <strong>audience-first</strong>
-    language, not brand-first. I understand voice, I work under deadlines,
-    and I'm ready to grow inside the right agency.
-  </p>
+<!-- Credentials & Certifications -->
+<section class="section" id="credentials">
+  <div class="section-header">
+    <div class="section-label">Credentials</div>
+    <h2 class="section-title">Education & Certifications</h2>
+  </div>
+
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="cert-image">
+        <img src="IIML.jpeg" alt="IIML Certification">
+      </div>
+      <div class="cert-details">
+        <div class="cert-name">Digital Marketing Mastery</div>
+        <div class="cert-issuer">IIML India</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-image">
+        <img src="IIT.jpeg" alt="IIT Certification">
+      </div>
+      <div class="cert-details">
+        <div class="cert-name">Advanced Marketing Strategies</div>
+        <div class="cert-issuer">IIT Delhi</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-image">
+        <img src="QCI.jpeg" alt="QCI Certification">
+      </div>
+      <div class="cert-details">
+        <div class="cert-name">Quality & Excellence Certification</div>
+        <div class="cert-issuer">QCI India</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-image">
+        <img src="ASLI SACHH.png" alt="Achievement Badge">
+      </div>
+      <div class="cert-details">
+        <div class="cert-name">Excellence in Content</div>
+        <div class="cert-issuer">Industry Recognition</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--border);">
+    <h3 class="section-title" style="font-size: 28px; margin-bottom: 24px;">Education</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+      <div>
+        <h4 style="font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; color: var(--dark); margin-bottom: 8px;">MBA in Marketing & Analytics</h4>
+        <p style="font-size: 14px; color: var(--muted); margin-bottom: 4px;">IIIT Lucknow</p>
+        <p style="font-size: 12px; color: var(--muted);">Focus: Digital Marketing, Data Analytics, Consumer Behavior</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<div class="contact-section">
-  <div>
-    <h2 class="contact-heading">
-      Let's make<br>something<span>.</span>
-    </h2>
+<!-- About Section -->
+<section class="section" id="about">
+  <div class="section-header">
+    <div class="section-label">About</div>
+    <h2 class="section-title">My Story</h2>
   </div>
-  <div class="contact-links">
-    <a href="mailto:devendra.agarwal2002@gmail.com" class="contact-link">
-      &#9993; &nbsp;devendra.agarwal2002@gmail.com
-    </a>
-    <a href="tel:+919473738606" class="contact-link">
-      &#9990; &nbsp;+91-9473738606
-    </a>
-    <a href="https://www.linkedin.com/in/devendra-agarwal" target="_blank" class="contact-link">
-      &#8599; &nbsp;linkedin.com/in/devendra-agarwal
-    </a>
-  </div>
-</div>
 
+  <div class="about-section">
+    <div>
+      <p class="about-text">
+        I'm an <strong>MBA candidate in Marketing & Analytics at IIIT Lucknow</strong>, with a passion for turning complex ideas into compelling copy.
+      </p>
+      <p class="about-text">
+        Since 2021, I've written <strong>500+ pieces of content</strong> — from legal articles to social captions, video scripts, and brand messaging. I work with the understanding that <strong>audience comes first, brand voice second.</strong>
+      </p>
+      <p class="about-text">
+        As a content manager at <strong>Desi Kaanoon</strong>, I drove <strong>200% engagement growth</strong> and 3× organic reach while making Supreme Court rulings accessible to everyday people. I work under deadlines, collaborate cross-functionally, and continuously optimize based on data.
+      </p>
+    </div>
+
+    <div class="about-highlights">
+      <div class="highlight-item">
+        <div class="highlight-icon">🎯</div>
+        <div class="highlight-text">
+          <strong>Audience-First Mindset:</strong> I think about who will read/watch first, brand narrative second. This drives engagement and shareability.
+        </div>
+      </div>
+      
+      <div class="highlight-item">
+        <div class="highlight-icon">📈</div>
+        <div class="highlight-text">
+          <strong>Data-Driven Optimization:</strong> I track metrics, A/B test copy, and iterate based on performance. Growth is measurable.
+        </div>
+      </div>
+      
+      <div class="highlight-item">
+        <div class="highlight-icon">⚡</div>
+        <div class="highlight-text">
+          <strong>Deadline Discipline:</strong> Fast turnaround without sacrificing quality. Managing multiple projects simultaneously is my norm.
+        </div>
+      </div>
+      
+      <div class="highlight-item">
+        <div class="highlight-icon">🤝</div>
+        <div class="highlight-text">
+          <strong>Cross-Functional Collaboration:</strong> I work seamlessly with designers, marketers, lawyers, and strategy teams.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+  <div class="contact-content">
+    <div>
+      <h2 class="contact-heading">
+        Let's <span class="highlight">create</span> something impactful.
+      </h2>
+    </div>
+    
+    <div class="contact-links">
+      <a href="mailto:devendra.agarwal2002@gmail.com" class="contact-link">
+        <span class="contact-icon">✉️</span>
+        devendra.agarwal2002@gmail.com
+      </a>
+      <a href="tel:+919473738606" class="contact-link">
+        <span class="contact-icon">📱</span>
+        +91-9473738606
+      </a>
+      <a href="https://www.linkedin.com/in/devendra-agarwal" target="_blank" class="contact-link">
+        <span class="contact-icon">💼</span>
+        linkedin.com/in/devendra-agarwal
+      </a>
+      <a href="https://www.instagram.com/desikaanoon/" target="_blank" class="contact-link">
+        <span class="contact-icon">📸</span>
+        @desikaanoon (Featured Work)
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer>
-  &copy; 2025 Devendra Agarwal &nbsp;&middot;&nbsp;
-  All real work is live at the links above.
+  <p>&copy; 2025 Devendra Agarwal | Content Strategist & Copywriter</p>
+  <p style="margin-top: 8px; font-size: 11px;">All work is live and linked above. Certifications verified and on file.</p>
 </footer>
+
+<script>
+// Smooth scrolling for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// Active nav link on scroll
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('.section, .hero');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (scrollY >= sectionTop - 200) {
+      current = section.getAttribute('id');
+    }
+  });
+  
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
