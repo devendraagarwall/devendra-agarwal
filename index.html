@@ -98,6 +98,13 @@ nav { position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-fil
 .work-link { font-size: 14px; color: var(--accent); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
 .work-link:hover { gap: 12px; }
 
+/* Instagram Reel Embed */
+.reel-container { margin: 40px 0; }
+.reel-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 16px; display: inline-flex; align-items: center; gap: 8px; }
+.reel-label::before { content: '🔥'; }
+.reel-wrapper { display: flex; justify-content: center; }
+.reel-wrapper blockquote.instagram-media { border-radius: 16px !important; box-shadow: 0 8px 32px rgba(230, 61, 0, 0.15) !important; border: 2px solid rgba(230, 61, 0, 0.2) !important; }
+
 /* Certifications */
 .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
 .cert-card { border: 2px solid var(--border); border-radius: 12px; overflow: hidden; background: white; transition: all 0.3s; cursor: pointer; }
@@ -308,6 +315,8 @@ footer { text-align: center; padding: 40px 60px; font-size: 13px; color: var(--m
   <div style="margin-bottom: 80px;">
     <h3 class="work-section-title">Legal Content at Scale</h3>
     <div class="work-grid">
+
+      <!-- Card 1: Desi Kaanoon Overview -->
       <div class="work-card">
         <div class="work-image">
           <img src="dkk.webp" alt="Desi Kaanoon - Legal Content Platform">
@@ -327,24 +336,34 @@ footer { text-align: center; padding: 40px 60px; font-size: 13px; color: var(--m
         </div>
       </div>
 
+      <!-- Card 2: Viral Reel with Live Embed -->
       <div class="work-card">
-        <div class="work-image">
-          <img src="h gghv.png" alt="High Reach Instagram Engagement - 100K+ Impressions">
-        </div>
-        <div class="work-content">
-          <span class="work-badge featured">Viral Performance</span>
+        <div class="work-content" style="padding-bottom: 0;">
+          <span class="work-badge featured">🔥 Viral Performance</span>
           <h3 class="work-title">High Reach Content</h3>
-          <p class="work-desc">Sample content that achieved 100K+ impressions showing consistent high engagement strategy and audience-tested content direction. Demonstrates ability to create shareable, impactful legal content.</p>
+          <p class="work-desc">This reel hit <strong>100K+ impressions</strong> — a product of sharp copywriting, strategic hook design, and audience-tested content direction. Watch it live below.</p>
           <div class="work-metrics">
             <span>🔥 100K+ impressions</span>
             <span>❤️ High engagement rate</span>
-            <span>📸 Shareable content</span>
+            <span>✍️ Script & copy by Devendra</span>
           </div>
-          <a href="https://www.instagram.com/reel/C3XaLKSLOrk/?igsh=aWx2NnlvaW8yaTds" target="_blank" class="work-link">
-            View Viral Reel →
-          </a>
+        </div>
+
+        <!-- Live Instagram Reel Embed -->
+        <div class="reel-container" style="padding: 0 20px 24px;">
+          <div class="reel-label">Live Reel — Best Copywriting Work</div>
+          <div class="reel-wrapper">
+            <blockquote
+              class="instagram-media"
+              data-instgrm-captioned
+              data-instgrm-permalink="https://www.instagram.com/reel/C3XaLKSLOrk/?utm_source=ig_embed&utm_campaign=loading"
+              data-instgrm-version="14"
+              style="background:#FFF; border:0; border-radius:12px; box-shadow:0 4px 20px rgba(230,61,0,0.15); max-width:380px; min-width:280px; width:100%; padding:0; margin:0 auto;">
+            </blockquote>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -448,7 +467,6 @@ footer { text-align: center; padding: 40px 60px; font-size: 13px; color: var(--m
   </div>
 
   <div class="cert-grid">
-    <!-- IIM Bangalore LOR - Featured -->
     <a href="https://raw.githubusercontent.com/devendraagarwall/devendra-agarwal/main/bchs.png" target="_blank" class="cert-card featured">
       <div class="cert-image">
         <img src="bchs.png" alt="Letter of Recommendation from IIM Bangalore">
@@ -601,6 +619,9 @@ footer { text-align: center; padding: 40px 60px; font-size: 13px; color: var(--m
   <p style="margin-top: 12px; font-size: 12px;">All work is live and linked above. Certifications verified and on file.</p>
 </footer>
 
+<!-- Instagram Embed Script -->
+<script async src="//www.instagram.com/embed.js"></script>
+
 <script>
 // Smooth scrolling for nav links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -632,6 +653,13 @@ window.addEventListener('scroll', () => {
       link.classList.add('active');
     }
   });
+});
+
+// Re-trigger Instagram embed processing after page load
+window.addEventListener('load', function() {
+  if (window.instgrm) {
+    window.instgrm.Embeds.process();
+  }
 });
 </script>
 
